@@ -18,8 +18,10 @@ class categoryFactory extends Factory
     {
         return [
             'name' => fake()->word(),
-            'color' => fake()->hexColor(),
-            'user_id' 
+            'color' => str_replace('#','', fake()->hexColor()),
+            'user_id' => fake()->number(100),
+            'category_created_at' => fake()->time(),
+            'category_updated_at'=> fake()->time()
         ];
     }
 }

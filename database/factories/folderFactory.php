@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Folder;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\folder>
@@ -19,9 +20,7 @@ class folderFactory extends Factory
         return [
             Folderl::create([
             
-                'Tittle' => 'Chona',
-                'Subtitle' => 'por que baila tanto?',
-                'color' => 'fffff0'
+                
                 
             ])
         ];

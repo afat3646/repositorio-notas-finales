@@ -17,7 +17,7 @@ class Folder extends Seeder
             
             'Tittle' => 'Chona',
             'Subtitle' => 'por que baila tanto?',
-            'color' => 'fffff0'
+            
             
         ]);
     }
