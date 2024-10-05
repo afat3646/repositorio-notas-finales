@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id('user_id');
             $table->string('Name',100);
-            $table->string('Username',15);
             $table->string('color', 100);
-            $table->time('category_created_at');
-            $table->time('category_updated_at');
+            $table->dateTime('category_created_at');
+            $table->dateTime('category_updated_at');
+            $table->timestamps();
         });
     }
 

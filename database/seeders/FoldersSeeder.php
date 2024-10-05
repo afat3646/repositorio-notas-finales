@@ -4,21 +4,19 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Model\Folderl;
+use App\Models\Folder;
 
-class Folder extends Seeder
+class FoldersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Folderl::create([
-            
-            'Tittle' => 'Chona',
-            'Subtitle' => 'por que baila tanto?',
-            
-            
+        Folder::create([
+            'name' => 'Pedro',
+            'Created' => now(),
+            'Updated' => now()
         ]);
     }
 }

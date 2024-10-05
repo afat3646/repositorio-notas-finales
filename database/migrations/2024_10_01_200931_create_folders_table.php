@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('folders', function (Blueprint $table) {
             
-            $table->id('ID'); 
+            $table->id(); 
             $table->string('name', 100);                                
             $table->time('Created');
-            $table->time('Updated');
-            
+            $table->time('Updated');            
             $table->timestamps();
         });
     }

@@ -27,12 +27,10 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'username' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
             'password' => fake()->password(),
             'remember_token' => fake()->randomNumber(),
-            'Created' => fake() -> time(),
-            'Updated' => fake() -> time()
-            
+            'Created' => fake() -> dateTimeBetween('01-01-2023', '12-12-2024')->format('Y-m-d'),
+            'updated_at' => now()
         ];
     }
 

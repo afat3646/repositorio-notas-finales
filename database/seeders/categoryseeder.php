@@ -17,8 +17,8 @@ class categoryseeder extends Seeder
             'name' => 'test',
             'color' => 'ff0000',
             'user_id' => '1',
-            'category_created_at'=>'30/10/24',
-            'category_updated_at'
+            'category_created_at'=> date_create_from_format('d/m/y', '30/10/24')->format('Y-m-d H:i:s'),
+            'category_updated_at'=> now()->format('Y-m-d H:i:s')
 
         ]);
         

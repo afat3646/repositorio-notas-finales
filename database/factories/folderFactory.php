@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Folder;
+use Number;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\folder>
@@ -18,9 +19,10 @@ class folderFactory extends Factory
     public function definition(): array
     {
         return [
-            Folderl::create([
-            
-                
+            Folder::create([
+                'name' => fake()->name(),
+                'Created' => now(),
+                'Updated' => now()
                 
             ])
         ];

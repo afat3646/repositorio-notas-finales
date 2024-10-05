@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('Content',10000);
             $table->boolean('Bookmark')->default(false);
             $table->string('Subtitle',1000)->nullable();
-            $table->time('Created');
-            $table->time('Updated');
+            $table->dateTime('Created');
+            $table->dateTime('Updated');
             $table->timestamps();
         });
     }

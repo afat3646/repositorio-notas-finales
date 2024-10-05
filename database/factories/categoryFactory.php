@@ -17,11 +17,11 @@ class categoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->word(),
+            'name' => fake()->name(),
             'color' => str_replace('#','', fake()->hexColor()),
-            'user_id' => fake()->number(100),
-            'category_created_at' => fake()->time(),
-            'category_updated_at'=> fake()->time()
+            'user_id' => fake()->randomNumber(),
+            'category_created_at' => fake()->dateTimeBetween('2023-01-01', '2024-12-31')->format('Y-m-d H:i:s'),
+            'category_updated_at'=> now()->format('Y-m-d H:i:s')
         ];
     }
 }

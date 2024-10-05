@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Folder;
-
+use App\Models\Notes;
 use Database\Factories\categoryFactory;
 use Database\Factories\folderFactory;
 use Illuminate\Database\Seeder;
@@ -21,13 +21,16 @@ class DatabaseSeeder extends Seeder
 
         
         $this->call([
-            //categoryseeder::class,
-            userSeeder :: class
+            categoryseeder::class,
+            userSeeder :: class,
+            FoldersSeeder ::class,
+            notesSeeder::class
             
         ]);
-        //Category::factory(100)->create;
-        //Category:: factory(10);
-        User::factory(100);
+        Category::factory(100)->create();
+        User::factory(100)->create();
+        Folder ::factory(5)->create();
+        Notes ::factory(100)->create();
 
         
     }
