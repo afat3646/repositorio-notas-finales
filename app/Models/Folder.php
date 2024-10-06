@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Folder extends Model
 {
     use HasFactory;
+    protected $table = "folders";
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
