@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('user_id');
             $table->string('Name',100);
             $table->string('color', 100);
-            $table->dateTime('category_created_at');
-            $table->dateTime('category_updated_at');
+            //$table->dateTime('category_created_at');
+            //$table->dateTime('category_updated_at');
             $table->timestamps();
         });
     }

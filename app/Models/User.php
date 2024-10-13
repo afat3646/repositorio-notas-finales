@@ -18,6 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];
@@ -46,5 +47,7 @@ class User extends Authenticatable
     }
     public function folders(){
         return $this-> hasMany(Folder::class);
+        
+
     }
 }

@@ -20,8 +20,8 @@ class categoryFactory extends Factory
             'name' => fake()->name(),
             'color' => str_replace('#','', fake()->hexColor()),
             'user_id' => fake()->randomNumber(),
-            'category_created_at' => fake()->dateTimeBetween('2023-01-01', '2024-12-31')->format('Y-m-d H:i:s'),
-            'category_updated_at'=> now()->format('Y-m-d H:i:s')
+            'created_at' => fake()->dateTimeBetween('2023-01-01', '2024-12-31')->format('Y-m-d H:i:s'),
+            'updated_at'=> now()->format('Y-m-d H:i:s')
         ];
     }
 }

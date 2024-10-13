@@ -21,15 +21,15 @@ class DatabaseSeeder extends Seeder
 
         
         $this->call([
-            categoryseeder::class,
+           // categoryseeder::class,
             userSeeder :: class,
-            FoldersSeeder ::class,
+            //FoldersSeeder ::class,
             notesSeeder::class
             
         ]);
-        Category::factory(100)->create();
+        //Category::factory(100)->create();
         User::factory(100)->create();
-        Folder ::factory(5)->create();
+       // Folder ::factory(10)->create();
         Notes ::factory(100)->create();
 
         

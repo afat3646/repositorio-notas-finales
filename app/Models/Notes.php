@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Notes extends Model
 {
     use HasFactory;
+    protected $table = "Notes";
+    protected $fillable=[
+        'Title','id','Content', 'Subtitle'
+    ];
+
+    public function Folder(){
+        return $this-> belongsTo(Folder::class);
+    }
 }
