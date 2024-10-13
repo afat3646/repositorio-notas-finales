@@ -13,7 +13,7 @@ class Notes extends Model
         'Title','id','Content', 'Subtitle'
     ];
 
-    public function Folder(){
-        return $this-> belongsTo(Folder::class);
+    public function Notes(){
+        return $this-> belongsTo(Notes::class);
     }
 }

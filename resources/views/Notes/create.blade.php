@@ -9,7 +9,7 @@
 
     <body>
         <h1>Create notes</h1>
-        <form action="{{route('notes.store')}}" method"post">
+        <form action="{{route('notes.store')}}"method="post">
             @csrf
             <label for="">Content</label>
             <input type="text"content="Content">
@@ -22,6 +22,7 @@
 
             <label for="">Subtitle</label>
             <input type="text"subtitle="Subtitle">
+            <input type="submit" value="Create note">
 
         </form>
 
