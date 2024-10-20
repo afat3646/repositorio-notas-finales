@@ -15,7 +15,7 @@ class FolderController extends Controller
     public function index()
     {
         $folders = Folder :: get();
-        return view('Folders.Index', compact('folders'));
+        return view('folders.Index', compact('folders'));
     }
 
     /**
@@ -23,7 +23,7 @@ class FolderController extends Controller
      */
     public function create()
     {
-        return view('Folders.create');
+        return view('folders.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class FolderController extends Controller
             'name'=> $request->name,
             'id'=>fake()->randomNumber($request->id),
         ]);
-        return to_route('Folders.Index');
+        return to_route('folders.Index');
     }
 
     /**

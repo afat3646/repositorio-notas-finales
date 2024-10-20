@@ -20,6 +20,8 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Actions</th>
+            <th>Delete</th>
         </tr>
 
     </thead>
@@ -27,9 +29,21 @@
         @foreach ($categories as $category)
             <tr>
                 <br>
-                <td>{{$category->user_id}}</td>
+                <td>{{$category->id}}</td>
                 <br>
                 <td>{{$category->Name}}</td>
+                <br>
+                <td>
+                    <a href="{{route("categories.show", $category->id)}}">See categories</a>
+                    
+                    <a href="{{route("categories.edit", $category->id)}}">edit categories</a>
+                </td>
+                <form action="{{route('categories.destroy', $category->id)}}"method="post">
+                @csrf
+                @method('delete')
+                <input type="Submit"value="Delete category">
+                </form>
+               
             </tr>
         @endforeach
 

@@ -15,9 +15,7 @@ class categoryseeder extends Seeder
     {
         Category::create([  
             'name' => 'test',
-            'color' => 'ff0000',
-            'created_at'=> date_create_from_format('d/m/y', '30/10/24')->format('Y-m-d H:i:s'),
-            'updated_at'=> now()->format('Y-m-d H:i:s')
+            'color' => 'ff0000'
 
         ]);
         

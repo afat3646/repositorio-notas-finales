@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('Username');
             $table->string('password');
             $table->string('remember_token'); 
-            $table->datetime('Created');
             $table->timestamps(); 
         });
 

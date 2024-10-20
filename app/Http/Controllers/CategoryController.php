@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Category;
 use Number;
 
@@ -35,7 +36,7 @@ class CategoryController extends Controller
        Category::create([
         'name'   => $request->name,
         'color'  => str_replace('#','', $request->color),
-        'user_id'=> fake()->randomNumber($request->user_id)
+        'id'=> fake()->randomNumber($request->id)
 
        ]);
        //return to_route('categories.Index');
@@ -46,7 +47,13 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //dd(Category::where('id',$id)->with('')->first());
+        $category = Category::find($id);
+        //dump($category);
+        $User = User::find($category->$id);
+        //dd($User);
+        return view('categories.show', compact('category', 'User'));
+        
     }
 
     /**
@@ -54,7 +61,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::find($id);
+        return view('categories.edit', compact('category'));
+
     }
 
     /**
@@ -62,7 +71,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::find($id);
+        $category->update([
+            'name' => $request->name,
+            'color' => str_replace('#','',$request->color)
+
+        ]);
+        return to_route('categories.Index');
     }
 
     /**
@@ -70,6 +85,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return to_route('categories.Index');
     }
 }

@@ -21,8 +21,7 @@ class folderFactory extends Factory
         return [
             Folder::create([
                 'name' => fake()->name(),
-                'Created' => now(),
-                'Updated' => now()
+                
                 
             ])
         ];

@@ -29,8 +29,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'password' => fake()->password(),
             'remember_token' => fake()->randomNumber(),
-            'Created' => fake() -> dateTimeBetween('01-01-2023', '12-12-2024')->format('Y-m-d'),
-            'updated_at' => now()
+            
         ];
     }
 

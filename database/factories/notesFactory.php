@@ -19,9 +19,7 @@ class notesFactory extends Factory
         return [
             'title'=> fake()->title(),
             'Content'=>fake()->realText(2000,5),
-            'Subtitle'=>fake()->title(),
-            'Created' => now(),
-            'Updated' => now(),
+            'Subtitle'=>fake()->title()
         ];
     }
 }

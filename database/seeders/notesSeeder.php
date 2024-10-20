@@ -17,9 +17,8 @@ class notesSeeder extends Seeder
         Notes::create([
             'Title' => 'pendientes',
             'Content' => 'limpiar, acomodar, acomodar escritorio',
-            'Subtitle' => 'Pendientes escolares',
-            'Created' => now(),
-            'Updated' => now()
+            'Subtitle' => 'Pendientes escolares'
+        
             
         ]);
     }

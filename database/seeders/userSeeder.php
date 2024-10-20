@@ -19,9 +19,7 @@ class userSeeder extends Seeder
             'Username' => 'Ruser',
             'email' => 'test@example.com',
             'password' => 'xhdrbz',
-            'remember_token' => 'JAOUAH10198',
-            'Created' => date_create_from_format('d-m-Y', '10-08-2024')->format('Y-m-d'), 
-            'updated_at' => now(),
+            'remember_token' => 'JAOUAH10198'
             
         ]);
     }

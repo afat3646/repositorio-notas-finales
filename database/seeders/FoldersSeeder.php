@@ -14,9 +14,7 @@ class FoldersSeeder extends Seeder
     public function run(): void
     {
         Folder::create([
-            'name' => 'Pedro',
-            'Created' => date_create_from_format('d/m/y', '30/10/24')->format('Y-m-d H:i:s'),
-            'Updated' =>  now()->format('Y-m-d H:i:s')
+            'name' => 'Pedro'            
         ]);
     }
 }
