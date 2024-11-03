@@ -43,7 +43,9 @@ class FolderController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $folders = Folder::find($id);
+        $notes = Notes::find($folders -> $id);
+        return view('Folders.show', compact('folders','notes'));
     }
 
     /**
@@ -51,7 +53,8 @@ class FolderController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $folders = Folder::find($id);
+        return view('Folders.edit', compact('folders'));
     }
 
     /**
@@ -59,7 +62,12 @@ class FolderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $folders = Folder::find($id);
+        $folders->update([
+            'name'=>$request->name,
+            'id'=>fake()->randomNumber($request->id)
+        ]);
+        return to_route('categories.edit');
     }
 
     /**
@@ -67,6 +75,8 @@ class FolderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $folders = Folder::find($id);
+        $folders->delete();
+        return to_route('categories.index');
     }
 }

@@ -22,14 +22,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($users as $user)
+        @foreach ($userse as $usera)
             <tr>
                 <br>
-                <td>{{$user->name}}</td>
+                <td>{{$usera->name}}</td>
                 <br>
-                <td>{{$user->email}}</td>
+                <td>{{$usera->email}}</td>
                 <br>
-                <td>{{$user->username}}</td>
+                <td>{{$usera->username}}</td>
             </tr>
 
         @endforeach

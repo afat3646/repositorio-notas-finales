@@ -19,7 +19,7 @@ class categoryFactory extends Factory
         return [
             'name' => fake()->name(),
             'color' => str_replace('#','', fake()->hexColor()),
-            'id' => fake()->randomNumber(),
+            'id' => fake(),
             
         ];
     }

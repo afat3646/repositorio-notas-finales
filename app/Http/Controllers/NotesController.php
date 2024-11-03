@@ -43,7 +43,8 @@ class NotesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $notes = Notes::find($id);
+        return view('notes.show', compact('notes'));
     }
 
     /**
@@ -51,7 +52,8 @@ class NotesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $notes = Notes::find($id);
+        return view('notes.edit', compact('notes'));
     }
 
     /**
@@ -59,7 +61,13 @@ class NotesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $notes = Notes::find($id);
+        $note->update([
+            'Title'=>$request->Title,
+            'Content'=> str_replace($request->Content),
+            'Subtitle'=>str_replace($request->Subtitle)
+        ]);
+        return to_route('notes.Index');
     }
 
     /**
@@ -67,6 +75,8 @@ class NotesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $notes = Notes::find($id);
+        $notes ->delete();
+        return to_route('notes.Index');
     }
 }

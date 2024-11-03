@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::get();
+        $userse = User::get();
         return view('users.Index', compact('users'));
     }
 
@@ -35,6 +35,8 @@ class UserController extends Controller
             'email'=>$request->username
 
         ]);
+        return to_route('users.index');
+
     }
 
     /**
@@ -42,7 +44,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $userse = User::findd($id);
+        return view('users.Index', compact('users'));
     }
 
     /**
@@ -50,7 +53,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $userse = User::find($id);
+        return view('Users.edit', compact('users')); 
     }
 
     /**
@@ -58,14 +62,23 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $userse = User::find($id);
+        $userse->update([
+            'name'=>$request->name,
+            'username'=>str_replace($request->username),
+            'email'=>str_replace($request->email),
+            'password'=>str_replace($request->password)
+        ]);
     }
+    return to_route('users.index')
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $userse = User::find($id);
+        $userse->delete();
+        return to_route('users.index');
     }
 }

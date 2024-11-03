@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -47,7 +48,12 @@ class User extends Authenticatable
     }
     public function folders(){
         return $this-> hasMany(Folder::class);
-        
+    }
+    public function category(){
+        return $this-> hasMany(Category::class);
+    } 
 
+    public function notes(){
+        return $this-> hasMany(Category::class);
     }
 }

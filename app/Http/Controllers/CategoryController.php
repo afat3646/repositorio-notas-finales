@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         $categories = Category::get();
         //dd($categories);
-        return view('categories.Index', compact('categories'));
+        return view('Categories.Index', compact('categories'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('Categories.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         'id'=> fake()->randomNumber($request->id)
 
        ]);
-       //return to_route('categories.Index');
+       return to_route('categories.Index');
     }
 
     /**
@@ -47,11 +47,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //dd(Category::where('id',$id)->with('')->first());
         $category = Category::find($id);
-        //dump($category);
         $User = User::find($category->$id);
-        //dd($User);
         return view('categories.show', compact('category', 'User'));
         
     }
