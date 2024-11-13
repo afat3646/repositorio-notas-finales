@@ -14,7 +14,7 @@ class CategoryApiController extends Controller
      public function index()
      {
          $categories = Category::all();
-         //dd($categories);
+         
          return response()->json($categories);
 
      }
